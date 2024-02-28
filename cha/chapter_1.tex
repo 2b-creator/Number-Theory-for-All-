@@ -1,0 +1,79 @@
+\chapter{基本概念}
+\begin{center}
+    \textcolor[RGB]{255, 0, 0}{\faHeart}你可以期待太阳从东方升起，而风却随心所欲地从四面八方吹来.\textcolor[RGB]{255, 0, 0}{\faHeart}
+\end{center}
+\rightline{——太阳圣皇「遮天」}
+\vspace{-5pt}
+\begin{center}
+    \pgfornament[width=0.36\linewidth,color=lsp]{88}
+\end{center}
+
+\section{绪论}
+人类对客观世界的数量分析，首先是从正整数$1,2,3...$开始的，然后才引出零和负整数，$-1,-2,-3...$所以整数有关问题在数学中占有极重要的位置.数论便是专门研究这类问题的数学分支，其历史悠久，内容丰富，堪称数学分支之冠,有着``数学皇后"的美名.近几年来，数学高考中，有关整数的命题从九省联考起来开始出现.这本书就讲讲一些常用的初等数论知识做简单的介绍.文中的字母在没有特别声明的时候，均可以代表整数.
+
+\section{整数的组成}
+从集合的观点来看，整数是整数，集合的简称。记作$\mathbb{Z} $,它由全体正整数、负整数，还有零组成:
+$$\mathbb{Z} = \left \{ n|n=0,\pm 1,\pm 2\dots  \right \} $$
+
+其中还有一些特殊的整数,例如自然数:
+$$\mathbb{N} = {0,1,2,3,4...}$$
+
+老子说过：``一生二，二生三，三生万物",从小学的时候，老师就教给我们加减乘除这4个最简单的运算法则.这些符号在计算机领域中也被称为``二元操作符",意思是我们需要有两个参数来完成这个运算.其中减是加的逆运算，除是乘的逆运算.由于整数的加乘都具有封闭性,即两个整数加和乘运算之后,仍然是两个整数,用老子的话讲，就是这个新的整数由两个倍被加或者被乘的整数生成.三生万物，构成了整个整数大厦.
+
+\subsection{封闭性}
+上面说到,加乘对整数来说具有封闭性,但是还有减.不过除两个数相除可不一定是整数哦!
+
+如果从我刚刚的整数的组成这个观点来看的话,你可以发现任何一个大于1的整数都存在两个正整数,这两个正整数的和等于这个整数,所谓``一生二，二生三，三生万物".但是,任何一个大于2的整数，不一定会存在两个大于1的整数的积等于这个整数.所以对加法来说,1可以看成是生成其他(正)整数的基本元素.但是对乘法来说,基本元素可就多了去了.数学界把这些基本元素叫做质数(Prime)，又叫素数.其他的非1正整数,叫做合数(Composite).
+
+\subsection{奇偶性}
+将全体整数分为两类，凡是2的倍数的数称为偶数(Even)，否则称为奇数(Odd)。因此，任一个偶数可表示为$2m,m\in \mathbb{Z}$.任意一个奇数都可以表示为$2m-1$.
+\begin{enumerate}
+	\item 奇数的平方都可以表示为$8m+1$形式,偶数的平方都可以表示为$8m$的形式$(m\in \mathbb{Z})$
+	\item 对任意一个正整数$n$,都可以写成$n=2^ml$的形式,$l$为奇数.
+\end{enumerate}
+
+\subsection{质数与合数}
+下面我们来看一看比较官方的定义:
+
+\begin{definition}[质数]
+	质数（Prime number），又称素数，指在大于1的自然数中，除了1和该数自身外，无法被其他自然数整除的数（也可定义为只有1与该数本身两个正因数的数）,否则就称为合数.1既不是质数，也不是合数.
+\end{definition}
+例如，在集合$\mathbb{N^+}$的前几个质数:$2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79...$.
+
+前几个合数为:$4, 6, 8, 9, 10, 12, 14, 15, 16, 18, 20, 21, 22, 24, 25, 26, 27, 28, 30, 32, 33, 34, ...$
+
+每个正整数都可以唯一地写为素数的乘积,例如$100=2^2 \cdot 5^2$,这个东西看起来简单,但是证明起来出乎意料地困难.我们不妨接着往下看;科学家们都非常好奇素数的分布,也有很多人提出过素数公式.例如被称为“17世纪最伟大的法国数学家”的费马，他``发现":设
+$$F_n=2^{2^n}+1$$
+则当$n$分别等于$0,1,2,3,4$时，$F_n$分别给出$3,5,17,257,65537$，都是质数，由于$F_5$太大（$F_5=4294967297$），他没有再往下检测就直接猜测：对于一切自然数，$F_n$都是质数。这便是费马数。而25岁的瑞士数学家欧拉证明：
+$$F_5=4294967297=641\times 6700417$$
+它并非质数，而是一个合数(看得出来，那个年代的数学家挺闲的).后来黎曼猜想是数论中最著名的未解决问题，它对素数如何分布的问题提出了非常精确的答案。
+
+下面一段话感兴趣的可以看一看,讲述了素数似乎服从某种规则，但是好像又不是那么严格服从的特质.或者在哔哩哔哩上 3B1B 的视频也讲了这一点\footnote{【官方双语】为什么素数会形成这些螺旋？https://www.bilibili.com/video/BV1tE411h7x4/}.
+
+\begin{ascolorbox9}{Don Zagier}
+	“There are two facts about the distribution of prime numbers. The first is that, [they are] the most arbitrary and ornery objects studied by mathematicians: they grow like weeds among the natural numbers, seeming to obey no other law than that of chance, and nobody can predict where the next one will sprout. The second fact is even more astonishing, for it states just the opposite: that the prime numbers exhibit stunning regularity, that there are laws governing their behavior, and that they obey these laws with almost military precision.”\footnote{http://modular.fas.harvard.edu/scans/papers/zagier/}
+\end{ascolorbox9}
+
+\section{除法}
+\subsection{整除}
+\begin{definition}[整除]
+	若$a,b,c \in \mathbb{Z}$,且$ac=b$,我们称 $a$ 整除 $b$,记作$a\mid b$.
+\end{definition}
+例如:$3\mid 6$;$6\mid 12$;而$3\nmid 7$,读作``3不整除7".
+
+\begin{theorem}[算术基本定理(Fundamental Theorem of Arithmetic)]
+	任何一个大于1的自然数 $N$,如果$N$不为质数，那么$N$可以唯一分解成有限个质数的乘积,即
+	$$N=P_{1}^{a_{1}}P_{2}^{a_{2}}P_{3}^{a_{3}}...P_{n}^{a_{n}}$$其中$$P_1 <P_2<P_3<...<P_n$$均为质数,所有的指数$a_i$都是正整数.
+	这样的分解称为$N$的标准分解式。
+\end{theorem}
+上面的$100=2^2 \cdot 5^2$就是标准分解式.
+
+\subsection{余数}
+当 $a$ 不整除 $b$ 的时候,会产生余数(Remainder).如
+$$a\div b = c \cdots d,(a,b,c,d \in \mathbb{Z})$$
+
+\section{进位制}
+我们生活中充满了进位制(Binary system)，大自然让人类拥有十根手指头，所以人类就选择了十进制(Decimal system)为基本算术进位制;在计算机内电路的通和断，代表了0和1视为二进制.以及苏联产生过三进制电脑......
+
+任何一个正整数在十进制都可以用数码唯一地表示:
+$$\overline{a_{n-1}a_{n-2}a_{n-3}...a_1a_0}=a_{n-1}\cdot 10^{n-1}+a_{n-2}\cdot 10^{n-2}+...+a_1\cdot 10+a_0$$

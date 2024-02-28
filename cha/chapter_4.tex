@@ -1,0 +1,93 @@
+\chapter{基本 Windows 桌面机制}
+\begin{center}
+	\textcolor[RGB]{255, 0, 0}{\faHeart}可能会有迷茫的时候，也可能会有因为不如意而觉得烦躁的时候。无论是谁都会遇到低谷，但只有跨越低谷的人才能得到大家的认可.\textcolor[RGB]{255, 0, 0}{\faHeart}
+\end{center}
+\rightline{——《花开伊吕波》}
+\vspace{-5pt}
+\begin{center}
+	\pgfornament[width=0.36\linewidth,color=lsp]{88}
+\end{center}
+
+\section{剖析典型的桌面窗口}
+一个典型的窗口执行一项任务。当你打开一个窗口时，它会占据屏幕的一部分。你可以尝试在桌面上打开尽可能多的窗口，在使用后关闭窗口即可。
+
+\section{拉动窗口标题栏}
+\begin{definition}{窗口标题栏}
+	标题栏在计算机软件中，位于窗口最顶部。显示当前应用程序名、文件名等，在许多窗口中，标题栏也包含程序图标、“最小化”、“最大化”、“还原”和“关闭”按钮以及“帮助”的按钮，可以简单地对窗口进行操作。如图4.1所示
+\end{definition}
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width=\textwidth]{figure/prtsc/title.png}
+		\caption{标题栏}
+	\end{center}
+\end{figure}
+
+现在请读者尝试拉动窗口的标题栏，并将其移动到上下左右屏幕边缘，看看有什么效果（分屏基础，我们会在以后的章节中提到分屏技巧）。当你把桌面拖拽到最顶部，你会发现窗口最大化了。此外，你还可以尝试双击标题栏以达到同样的效果。
+
+与其他版本的 Windows 一样，你可以通过拖拽标题栏并在桌面上小心地将它们移动到您想要的位置来移动窗口。
+
+此外你可以按住标题栏并摇动它，让所有其他应用程序都最小化而无需\md{手动将其他打开的窗口一一最小化}。
+
+默认情况下，该设置处于禁用状态。下面是开启它的步骤：
+\begin{ascolorbox9}{开启标题栏窗口摇动}
+	\begin{itemize}
+		\item 使用 Win+I 组合键，打开\md{设置}
+		\item 在左侧栏中找到\md{系统}，然后在右侧找到\md{多任务处理}
+		\item 打开\md{标题栏窗口摇动}
+	\end{itemize}
+\end{ascolorbox9}
+
+这样你就可以通过摇动标题栏来最小化其他已经打开的窗口了。
+\section{使用 Windows 地址栏浏览文件夹}
+Windows 11 还提供一个地址栏，以确保你可以在文件资源管理器上轻松找到文档。
+
+\subsection{文件夹菜单栏}
+在这里，你可以找到一个文件菜单栏，该菜单栏可以帮助你导航文件，或者搜索文件。
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width=\textwidth]{figure/prtsc/menu_bar.png}
+		\caption{菜单栏}
+	\end{center}
+\end{figure}
+\subsection{导航窗格}
+\begin{definition}{导航窗格}
+	导航窗格（navigation pane）指的是你打开文件的时候，上方会显示文件夹的地址，该地址显示的区域为导航窗格。如图4.3所示
+\end{definition}
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width=\textwidth]{figure/prtsc/navigation_pane.png}
+		\caption{导航窗格}
+	\end{center}
+\end{figure}
+导航窗格可以帮助你选择你打开的文件夹路径，可以是任意一级，例如，我可以点击\md{elegentbook-magic-revision}回到这个目录下。
+
+\begin{definition}{路径}
+	路径（path）是一种电脑文件或目录的名称的通用表现形式，它指向文件系统上的一个唯一位置。指向一个文件系统位置的路径通常采用以字符串表示的目录树分层结构，首个部分表示文件系统位置，之后以分隔字符分开的各部分路径表示各级目录，最后是该文件/文件夹。分隔字符最常采用斜线（/）、反斜线（\textbackslash）或冒号（:）字符，不同操作系统与环境可能采用不同的字符。路径在计算机科学中被广泛采用，用以表示现代操作系统中常见的文件夹/文件关系，在构建统一资源定位符（URL）时也必不可少。资源可以采用绝对路径表示，也可采用相对路径表示。
+\end{definition}
+
+\section{桌面机制}
+包括关闭，放大缩小，并排放置，记忆窗口。
+\subsection{关闭窗口}
+这是最简单的一环了，相信各位单凡用过电脑的人都知道关闭，即最右上角的 \md{$\times$} 号，不过，使用快捷键 Alt+F4 也是可以关闭窗口的。
+
+\subsection{放大或缩小窗口}
+将指针悬浮到非最大化界面的程序边框，若出现\md{双箭头}的图标，那说明该窗口可拖动放大或缩小。
+
+总之，移动窗口拖动的是\md{标题栏}，放大缩小则是程序的\md{边缘}
+
+\subsection{整齐并排放置窗口}
+要并排放置窗口，只需将要并排放置的两个窗口移动到屏幕的另一侧，窗口就会立即自动使它们共享一半屏幕，另一半可以自己选择防止
+
+\subsection{窗口大小记忆功能}
+将窗口大小调整为您想要的大小，然后关闭它们，窗口将立即保持不变，它会记住上次使用时的大小，下次打开时会照常还原。
+
+但是，对于一些特殊的软件，这个功能不适用。
+
+\section{章后练习}
+\begin{reidai}
+	请使用快捷键等方式，完成平常工作学习的基本要求
+\end{reidai}
+
+
+
+
